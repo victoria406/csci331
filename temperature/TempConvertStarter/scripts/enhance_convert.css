@@ -1,0 +1,63 @@
+/* main.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #ffe4e1); /* gradient background */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #007acc;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}
+
+input[type="button"] {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover {
+    background-color: #005fa3;
+}
+
+img {
+    margin-top: 20px;
+    max-width: 150px;
+    transition: opacity 0.5s ease;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
+}
