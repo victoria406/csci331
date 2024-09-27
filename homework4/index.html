@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Gathering Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form action="form-viewer.php" method="post">
+  <fieldset>
+    <legend>Select your hobbies:</legend>
+    <label><input type="checkbox" name="hobbies[]" value="Reading"> Reading</label>
+    <label><input type="checkbox" name="hobbies[]" value="Traveling"> Traveling</label>
+    <label><input type="checkbox" name="hobbies[]" value="Cooking"> Cooking</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Choose your preferred contact method:</legend>
+    <label><input type="radio" name="contact_method" value="Email"> Email</label>
+    <label><input type="radio" name="contact_method" value="Phone"> Phone</label>
+    <label><input type="radio" name="contact_method" value="Mail"> Mail</label>
+  </fieldset>
+
+  <label for="country">Select your country:</label>
+  <select name="country" id="country">
+    <option value="USA">USA</option>
+    <option value="Canada">Canada</option>
+    <option value="UK">UK</option>
+  </select>
+
+  <label for="languages">Select languages you speak:</label>
+  <select name="languages[]" id="languages" multiple>
+    <option value="English">English</option>
+    <option value="Spanish">Spanish</option>
+    <option value="French">French</option>
+  </select>
+
+  <label for="username">Enter your username:</label>
+  <input type="text" name="username" id="username">
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>
