@@ -1,5 +1,20 @@
 const element = document.getElementById("dogg");
 
+document.addEventListener("keypress",determineKey)
+
+function determineKey(event){
+  let key = event.key;
+  if (key == "w" || key == "W") {
+    animateUp();
+  } else if (key == "a" || key == "A") {
+    animateLeft();
+  } else if (key == "s" || key == "S") {
+    animateDown();
+  } else if (key == "d" || key == "D") {
+    animateRight();
+  }
+}
+
 let currentAnimation;
 
 function move(transformEnd) {
