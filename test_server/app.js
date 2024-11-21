@@ -17,10 +17,13 @@ function determineKey(event){
 
 let currentAnimation;
 
-function move(transformEnd) {
+function move(transformEndXY) {
+  var rect = element.getBoundingClientRect();
+  
   currentAnimation?.pause();
-  let transformStart = getComputedStyle(element).transform;
-
+  let transformStartXY = "translate(" + (rect.left.toString()-8) + "px, " + (rect.top.toString()-8) + "px)";
+  //console.log(transformStartXY);
+  //console.log(transformEndXY);
   let duration = 1000;
   if (currentAnimation) {
     const timing = currentAnimation.effect.getComputedTiming();
@@ -38,7 +41,7 @@ function move(transformEnd) {
   currentAnimation?.cancel(); 
 
   currentAnimation = element.animate(
-    [{ transform: transformStart }, { transform: transformEnd }],
+    [{ transform: transformStartXY }, { transform: transformEndXY }],
     {
       duration: duration,
       easing: "linear",
@@ -46,8 +49,12 @@ function move(transformEnd) {
     }
   );
   animation_ForC();
+  //console.log("test"); 
+  var rect = element.getBoundingClientRect();
+  //console.log(rect.top, rect.right, rect.bottom, rect.left);
 }
 async function animation_ForC() {
+  var rect = dogg.getBoundingClientRect();
   // handling cancellation with promises
   currentAnimation?.finished
     .then(() => console.log("animation finished!"))
@@ -60,17 +67,34 @@ async function animation_ForC() {
   }
 }
 function animateLeft() {
-  move("translateX(0)", "translateX(500px)");
+  var rect = element.getBoundingClientRect();
+  //console.log(rect.top, rect.right, rect.bottom, rect.left);
+  var yadj = rect.top - 8;
+  var leftadj = rect.left - 508;
+  move("translate(" + (leftadj.toString()) + "px, " + (yadj.toString()) + "px)");
 }
 
 function animateRight() {
-  move("translateX(500px)", "translateX(0)");
+  var rect = element.getBoundingClientRect();
+  //console.log(rect.top, rect.right, rect.bottom, rect.left);
+  //console.log("right");
+  var yadj = rect.top - 8;
+  var rightadj = rect.left + 492;
+  move("translate(" + (rightadj.toString()) + "px, " + (yadj.toString()) + "px)");
 }
 
 function animateDown() {
-  move("translateY(500px)", "translateY(0)");
+  var rect = element.getBoundingClientRect();
+  //console.log(rect.top, rect.right, rect.bottom, rect.left);
+  var xadj = rect.left - 8;
+  var downadj = rect.top + 492;
+  move("translate(" + (xadj.toString()) + "px, " + (downadj.toString()) + "px)");
 }
 
 function animateUp() {
-  move("translateY(0)", "translateY(500px)");
+  var rect = element.getBoundingClientRect();
+  //console.log(rect.top, rect.right, rect.bottom, rect.left);
+  var xadj = rect.left - 8;
+  var upadj = rect.top - 508;
+  move("translate(" + (xadj.toString()) + "px, " + (upadj.toString()) + "px)");
 }
